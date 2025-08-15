@@ -36,7 +36,7 @@ public class EmployeeController {
     public List<Employee> getEmployeesByManager(
             @PathVariable Long managerId,
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "20") int size,
             @RequestParam(required = false) String sort) {
         return employeeService.getEmployeesByManager(managerId, page, size, sort).getContent();
     }
@@ -45,7 +45,7 @@ public class EmployeeController {
     public List<Employee> getEmployeesByDepartment(
             @PathVariable String departmentIdentifier,
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "20") int size,
             @RequestParam(required = false) String sort) {
         return employeeService.getEmployeesByDepartment(departmentIdentifier, page, size, sort).getContent();
     }
